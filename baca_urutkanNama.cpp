@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
-
+//batas data
 const int MAX = 100;
-
+//baca file absen.txt lalu simpan nama dan status ke array(h/t)
 void bacaFile(string nama[], char status[], int &jumlah){
   ifstream file("absensi.txt");
   jumlah = 0;
@@ -16,7 +16,7 @@ void bacaFile(string nama[], char status[], int &jumlah){
   }
   file.close();
 }
-
+//urutkan array nama menggunakan bubble sort dan untuk menukar status(h/t)
 void urutkanNama(string nama[], char status[], int jumlah){
   string tempNama;
   char tempStatus;
@@ -24,10 +24,11 @@ void urutkanNama(string nama[], char status[], int jumlah){
   for(int i = 0;i < jumlah -1; i++){
     for(int j = 0;j < jumlah - i - 1; j++){
       if (nama[j] > nama[j+1]){
+        //tukar nama
         tempNama = nama[j];
         nama[j] = nama[j+1];
         nama[j+1] = tempNama;
-        
+        //tukae status
         tempStatus = status[j];
         nama[j] = nama[j+1];
         nama[j+1] = tempStatus;
