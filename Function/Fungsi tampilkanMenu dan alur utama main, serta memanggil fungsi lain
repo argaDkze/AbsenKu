@@ -1,1 +1,45 @@
+int main() {
+    int pilihan = 0;
+    do {
+        tampilkanMenu();
+        cout << "Pilih menu: ";
+        if (!(cin >> pilihan)) {
+            cout << "Input tidak valid.\n";
+            cin.clear();
+            cin.ignore(10000, '\n');
+            continue;
+        }
 
+        if (pilihan == 1) {
+            inputData();
+        } else if (pilihan == 2) {
+            tampilkanAbsen();
+        } else if (pilihan == 3) {
+            bacaFile();
+            if (n == 0) {
+                cout << "Data absensi kosong.\n";
+            } else {
+                string key;
+                cout << "Masukkan nama yang dicari: ";
+                cin.ignore(); // bersihkan newline sebelum getline
+                getline(cin, key);
+                int idx = cariNama(key);
+                if (idx != -1) {
+                    cout << "Data ditemukan: " << nama[idx] << " - " << statusArr[idx] << "\n";
+                } else {
+                    cout << "Nama tidak ditemukan.\n";
+                }
+            }
+        } else if (pilihan == 4) {
+            rekapKehadiran();
+        } else if (pilihan == 5) {
+            ubahStatus();
+        } else if (pilihan == 6) {
+            cout << "Keluar program.\n";
+        } else {
+            cout << "Pilihan tidak valid.\n";
+        }
+    } while (pilihan != 6);
+
+    return 0;
+}
