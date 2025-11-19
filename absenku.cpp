@@ -51,7 +51,7 @@ void ubahStatus() {
 
     statusArr[idx] = baru;
 
-    // ini buat nulis ulang file nya
+    // ini buat nulis ulang file txt nya
     ofstream file("absensi.txt", ios::trunc);
     if (!file) {
         cout << "Gagal membuka file untuk menulis.\n";
