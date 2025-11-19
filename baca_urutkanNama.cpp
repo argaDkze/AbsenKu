@@ -35,3 +35,20 @@ void urutkanNama(string nama[], char status[], int jumlah){
       }
     }
 }
+
+//fungsi main
+int main(){
+  string nama[MAX];
+  char status[MAX];
+  int jumlah;
+  //baca file
+  bacaFile(nama, status, jumlah);
+  // urutkan nama
+  urutkanNama(nama, status, jumlah);
+  //menampilkan hasil
+  cout << "Data setelah diurutkan: " << '\n';
+  for(int i=0;i < jumlah; i++){
+    cout << nama[i] << " - " << status[i] << '\n';
+  }
+  return 0;
+}
