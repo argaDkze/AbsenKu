@@ -18,6 +18,8 @@ void rekapKehadiran();
 int cariNama(const string &key);
 void ubahStatus();
 
+
+
 void ubahStatus() {
     bacaFile();
     if (n == 0) {
