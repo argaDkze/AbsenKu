@@ -8,7 +8,7 @@ void ubahStatus() {
     }
     string key;
     cout << "Masukkan nama yang ingin diubah: ";
-    cin.ignore(); // pastikan buffer bersih sebelum getline
+    cin.ignore();
     getline(cin, key);
 
     int idx = cariNama(key);
