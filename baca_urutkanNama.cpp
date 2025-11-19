@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <string>
+using namespace std;
 //batas data
 const int MAX = 100;
 //baca file absen.txt lalu simpan nama dan status ke array(h/t)
@@ -28,12 +30,13 @@ void urutkanNama(string nama[], char status[], int jumlah){
         tempNama = nama[j];
         nama[j] = nama[j+1];
         nama[j+1] = tempNama;
-        //tukae status
+        //tukar status
         tempStatus = status[j];
         status[j] = status[j+1];
         status[j+1] = tempStatus;
       }
     }
+  }
 }
 
 //fungsi main
@@ -46,7 +49,7 @@ int main(){
   // urutkan nama
   urutkanNama(nama, status, jumlah);
   //menampilkan hasil
-  cout << "Data setelah diurutkan: " << '\n';
+  cout << " Data setelah diurutkan: " << '\n';
   for(int i=0;i < jumlah; i++){
     cout << nama[i] << " - " << status[i] << '\n';
   }
