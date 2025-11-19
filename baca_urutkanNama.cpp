@@ -30,8 +30,8 @@ void urutkanNama(string nama[], char status[], int jumlah){
         nama[j+1] = tempNama;
         //tukae status
         tempStatus = status[j];
-        nama[j] = nama[j+1];
-        nama[j+1] = tempStatus;
+        status[j] = status[j+1];
+        status[j+1] = tempStatus;
       }
     }
 }
