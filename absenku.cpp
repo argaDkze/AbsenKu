@@ -28,7 +28,7 @@ void ubahStatus() {
     }
     string key;
     cout << "Masukkan nama yang ingin diubah: ";
-    cin.ignore(); // pastikan buffer bersih sebelum getline
+    cin.ignore();
     getline(cin, key);
 
     int idx = cariNama(key);
@@ -51,7 +51,7 @@ void ubahStatus() {
 
     statusArr[idx] = baru;
 
-    // tulis ulang file (overwrite)
+    // ini buat nulis ulang file nya
     ofstream file("absensi.txt", ios::trunc);
     if (!file) {
         cout << "Gagal membuka file untuk menulis.\n";
