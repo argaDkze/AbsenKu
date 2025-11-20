@@ -18,6 +18,11 @@ void rekapKehadiran();
 int cariNama(const string &key);
 void ubahStatus();
 
+
+    cout << "\n===== REKAP KEHADIRAN =====\n";
+    cout << "Jumlah Hadir       : " << hadir << "\n";
+    cout << "Jumlah Tidak Hadir : " << tidak << "\n";
+}
 //================================================================//
 int cariNama(const string &key) {
     // mengasumsikan data sudah dibaca (bacaFile dipanggil oleh pemanggil)
