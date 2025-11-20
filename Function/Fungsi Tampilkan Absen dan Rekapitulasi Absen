@@ -10,6 +10,7 @@ void tampilkanAbsen() {
         cout << i+1 << ". " << nama[i] << " - " << statusArr[i] << "\n";
     }
 }
+
 void rekapKehadiran() {
     bacaFile();
     int hadir = 0, tidak = 0;
@@ -17,7 +18,3 @@ void rekapKehadiran() {
         if (statusArr[i] == 'H') hadir++;
         else tidak++;
     }
-    cout << "\n===== REKAP KEHADIRAN =====\n";
-    cout << "Jumlah Hadir       : " << hadir << "\n";
-    cout << "Jumlah Tidak Hadir : " << tidak << "\n";
-}
