@@ -28,6 +28,46 @@ void tampilkanMenu() {
     cout << "6. Keluar\n";
     cout << "========================\n";
 }
+void inputData() {
+    ofstream file("absensi.txt", ios::app);
+    if (!file) {
+        cout << "Gagal membuka file untuk menulis.\n";
+        return;
+    }
+
+    int m;
+    cout << "Masukkan jumlah siswa yang akan diinput: ";
+    cin >> m;
+    cin.ignore(); // buang newline agar getline tidak ter-skip
+
+    for (int i = 0; i < m; i++) {
+        string s;
+        char st;
+
+        cout << "Nama ke-" << i+1 << ": ";
+        getline(cin, s);  // nama bisa pakai spasi
+
+        // Validasi status dengan do-while
+        do {
+            cout << "Status (H/T): ";
+            cin >> st;
+            st = toupper(st);
+
+            if (st != 'H' && st != 'T') {
+                cout << "Input tidak valid! Masukkan hanya H atau T.\n";
+            }
+
+        } while (st != 'H' && st != 'T');
+
+        cin.ignore(); // bersihkan newline sebelum iterasi selanjutnya
+
+        // Simpan ke file pakai delimiter '|'
+        file << s << "|" << st << "\n";
+    }
+
+    file.close();
+    cout << "Data berhasil disimpan ke absensi.txt\n";
+}
 
 void bacaFile() {
     ifstream file("absensi.txt");
