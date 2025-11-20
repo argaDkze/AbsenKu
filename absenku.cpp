@@ -18,6 +18,17 @@ void rekapKehadiran();
 int cariNama(const string &key);
 void ubahStatus();
 
+void tampilkanMenu() {
+    cout << "\n===== MENU ABSENSI =====\n";
+    cout << "1. Input Data Absen\n";
+    cout << "2. Tampilkan Absen (A-Z)\n";
+    cout << "3. Cari Nama\n";
+    cout << "4. Rekap Kehadiran\n";
+    cout << "5. Ubah Status\n";
+    cout << "6. Keluar\n";
+    cout << "========================\n";
+}
+
 void bacaFile() {
     ifstream file("absensi.txt");
     n = 0;
