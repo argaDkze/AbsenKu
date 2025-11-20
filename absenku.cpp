@@ -114,13 +114,6 @@ void urutkanNama() {
 }
 
 //================================================================//
-int cariNama(const string &key) {
-    // mengasumsikan data sudah dibaca (bacaFile dipanggil oleh pemanggil)
-    for (int i = 0; i < n; i++) {
-        if (nama[i] == key) return i;
-    }
-    return -1;
-}
 //==================================================================//
 
 void tampilkanAbsen() {
@@ -143,8 +136,19 @@ void rekapKehadiran() {
         if (statusArr[i] == 'H') hadir++;
         else tidak++;
     }
+    cout << "\n===== REKAP KEHADIRAN =====\n";
+    cout << "Jumlah Hadir       : " << hadir << "\n";
+    cout << "Jumlah Tidak Hadir : " << tidak << "\n";
+}
 
 //==================================================================//
+int cariNama(const string &key) {
+    // mengasumsikan data sudah dibaca (bacaFile dipanggil oleh pemanggil)
+    for (int i = 0; i < n; i++) {
+        if (nama[i] == key) return i;
+    }
+    return -1;
+}
 
 void ubahStatus() {
     bacaFile();
