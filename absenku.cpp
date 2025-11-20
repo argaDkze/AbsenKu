@@ -169,6 +169,7 @@ int main() {
             cin.ignore(10000, '\n');
             continue;
         }
+        
         if (pilihan == 1) {
             inputData();
         } else if (pilihan == 2) {
@@ -199,5 +200,6 @@ int main() {
             cout << "Pilihan tidak valid.\n";
         }
     } while (pilihan != 6);
+    
     return 0;
 }
