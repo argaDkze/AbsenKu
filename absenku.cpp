@@ -77,7 +77,28 @@ int cariNama(const string &key) {
 }
 //==================================================================//
 
+void tampilkanAbsen() {
+    bacaFile();
+    if (n == 0) {
+        cout << "Data absensi kosong.\n";
+        return;
+    }
+    urutkanNama();
+    cout << "\n===== DAFTAR ABSENSI (URUT A-Z) =====\n";
+    for (int i = 0; i < n; i++) {
+        cout << i+1 << ". " << nama[i] << " - " << statusArr[i] << "\n";
+    }
+}
 
+void rekapKehadiran() {
+    bacaFile();
+    int hadir = 0, tidak = 0;
+    for (int i = 0; i < n; i++) {
+        if (statusArr[i] == 'H') hadir++;
+        else tidak++;
+    }
+
+//==================================================================//
 
 void ubahStatus() {
     bacaFile();
